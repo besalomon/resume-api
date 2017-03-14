@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find_by(id:params[:id])
     @student.delete
-    render: index
+    render :index
   end
 
 end
