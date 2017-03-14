@@ -1,10 +1,9 @@
 class SkillsController < ApplicationController
 
-  
   def index
     @skills = Skill.all 
 
-    render json: @skills   
+    render "index.json.jbuilder"  
   end
 
   def show
