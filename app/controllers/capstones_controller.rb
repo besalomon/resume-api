@@ -1,13 +1,13 @@
 class CapstonesController < ApplicationController
   def index 
-   @capstones = Capstone.all     
- end
+    @capstones = Capstone.all     
+  end
 
- def new 
-   
- end
+  def show
+    @capstone = Capstone.find_by(id:params[:id])
+  end
 
- def create 
+  def create 
    name = params[:name],
    description = params[:description],
    url = params[:url],
@@ -15,15 +15,11 @@ class CapstonesController < ApplicationController
    capstone = Capstone.create({name: name, description: description, url: url, screenshot: screenshot, student_id: student_id})
 
    render :show
- end
+  end
 
- def edit 
+  def update 
    @capstone = Capstone.find_by(id: params[:id])
- end
-
- def update 
-   capstone = Capstone.find_by(id: params[:id])
-   @capstone = Capstone.update(
+   @capstone.update(
      name: params[:name],
      description: params[:description],
      url: params[:url],
@@ -31,12 +27,12 @@ class CapstonesController < ApplicationController
      )
    render jason: @capstone 
 
- end
+  end
 
   def destroy
    @capstone = Capstone.find_by(id:params[:id])
    @capstone.destroy
 
    render json: {message: "Team Removed!!!!!"}
- end
+  end
 end
