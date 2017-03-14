@@ -1,5 +1,4 @@
-class EducationController < ApplicationController
-
+class EducationsController < ApplicationController
   def index
     @educations = Education.all  
   end
