@@ -16,8 +16,8 @@ class SkillsController < ApplicationController
   end
 
   def create
-    name: params[:name]
-    student_id: params[:student_id]
+    name = params[:name]
+    student_id = params[:student_id]
     
     @skill = Skill.create(name: name, student_id: student_id)
 
