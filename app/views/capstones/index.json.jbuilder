@@ -1,5 +1,8 @@
-json.array! @students.each do |student|
-  json.id student.id
-  json.name Capstone.name
-  json.description Capstone.description
+json.array! @capstones.each do |capstone|
+  json.id capstone.id
+  json.student_id capstone.student_id
+  json.name capstone.name
+  json.url capstone.url
+  json.description capstone.description
+  json.screenshot capstone.screenshot
 end
