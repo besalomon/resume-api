@@ -1,4 +1,5 @@
 class Api::V2::SkillsController < ApplicationController
+  
   def index
     @skills = Skill.all 
 

@@ -1,4 +1,5 @@
 class Api::V2::CapstonesController < ApplicationController
+  before_action :restrict_access
   def index 
     @capstones = Capstone.all     
     render "index.json.jbuilder"

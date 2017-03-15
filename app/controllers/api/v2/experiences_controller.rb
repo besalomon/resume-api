@@ -1,4 +1,5 @@
 class Api::V2::ExperiencesController < ApplicationController
+
   def index
     @experiences = Experience.all
     render "index.json.jbuilder"
