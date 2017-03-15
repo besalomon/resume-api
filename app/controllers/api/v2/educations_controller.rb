@@ -1,4 +1,5 @@
 class Api::V2::EducationsController < ApplicationController
+  before_action :restrict_access
 def index
     @educations = Education.all  
     render "index.json.jbuilder"

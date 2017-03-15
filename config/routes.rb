@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       resources :skills
       resources :experiences
       resources :educations
+      post"/login", to: 'sessions#create'
     end
   end
+
 end
