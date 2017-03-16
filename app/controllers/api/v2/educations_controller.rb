@@ -1,7 +1,6 @@
 class Api::V2::EducationsController < ApplicationController
-  before_action :restrict_access
 def index
-    @educations = Education.all  
+    @educations = current_user.educations 
     render "index.json.jbuilder"
   end
 
@@ -11,7 +10,7 @@ def index
 
   def create
     @education = Education.create(start_date: params[:start_date], end_date: params[:end_date], degree: params[:degree], university_name: params[:university_name], student_id: params[:student_id], details: params[:details])
-    render json: @education    
+    render json: @education 
   end
 
   def update 
